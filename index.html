@@ -3,32 +3,41 @@
 <head>
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
   <div>
     <div id="container">
-      <div id="display"></div>
+      <div id="display">
+        <div class="history">
+          <span class="disHistory"></span>
+        </div>
+        <div>
+          <span class="disText"></span>
+        </div>
+      </div>
       <div id="buttons">
-        <span class="seven">7</span>
-        <span class="eight">8</span>
-        <span class="nine">9</span>
-        <span class="four">4</span>
-        <span class="five">5</span>
-        <span class="six">6</span>
-        <span class="one">1</span>
-        <span class="two">2</span>
-        <span class="three">3</span>
+        <span class="seven number">7</span>
+        <span class="eight number">8</span>
+        <span class="nine number">9</span>
+        <span class="four number">4</span>
+        <span class="five number">5</span>
+        <span class="six number">6</span>
+        <span class="one number">1</span>
+        <span class="two number">2</span>
+        <span class="three number">3</span>
         <span class="clear">AC</span>
-        <span class="zero">0</span>
-        <span class="float">,</span>
-        <span class="plus">+</span>
-        <span class="minus">-</span>
-        <span class="times">*</span>
-        <span class="divide">÷</span>
+        <span class="zero number">0</span>
+        <span class="float">.</span>
+        <span class="plus operand">+</span>
+        <span class="minus operand">-</span>
+        <span class="times operand">×</span>
+        <span class="divide operand">÷</span>
         <span class="delete">←</span>
         <span class="equals">=</span>
       </div>
     </div>
   </div>
 </body>
+<script src="scripts/js.js"></script>
 </html>
