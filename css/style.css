@@ -1,3 +1,8 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: darkgray;
+}
+
 #container {
     width: fit-content;
     height: fit-content;
@@ -5,127 +10,141 @@
     position: absolute;
     top: 25%;
     left: 43%;
+    border: 1px solid black;
+    -webkit-box-shadow: 0px 0px 24px -7px gray;
+    -moz-box-shadow: 0px 0px 24px -7px gray;
+    box-shadow: 0px 0px 24px -7px gray;
 }
 
 #display {
     width: 300px;
     height: 125px;
-    border: 2px solid black;
+
     border-bottom: none;
+    text-align: right;
+    background-color: #eeeeee;
 }
 
 #buttons {
     display: grid;
     grid-template-columns: repeat(5, 60px);
     grid-template-rows: repeat(4, 60px);
-    border: 2px solid black;
     width: fit-content;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
 }
 
-.clear {
+.number {
+    background-color: white;
+}
+
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover, 
+.six:hover, .seven:hover, .eight:hover, .nine:hover, .plus:hover, 
+.minus:hover, .times:hover, .divide:hover, .clear:hover, .delete:hover, 
+.float:hover, .zero:hover {
+    background-color: #e1e1e1;
+    border: 0.1px solid lightgray;
+}
+
+.seven:hover, .eight:hover, .nine:hover .divide:hover {
+    padding-top: 1.22rem;
+}
+
+.one:hover, .two:hover, .three:hover, .four:hover, 
+.five:hover, .six:hover, .zero:hover, .plus:hover, 
+.minus:hover, .times:hover, .clear:hover, .float:hover {
+    padding-top: 1.3rem;
+}
+
+.number, .operand, .clear {
+    padding-top: 1.2rem;
+    border: 1px solid #eeeeee;
+}
+
+.operand, .clear, .delete, .float {
+    background-color: #f6f6f6;
+}
+
+.clear, .zero, .float, .plus {
     grid-row: 4 / 5;
+}
+
+.one, .two, .three, .minus {
+    grid-row: 3 / 4;
+}
+
+.four, .five, .six, .times {
+    grid-row: 2 / 3;
+}
+
+.seven, .eight, .nine, .divide {
+    grid-row: 1 / 2;
+}
+
+.seven, .four, .one, .clear {
     grid-column: 1 / 2;
-    border: 2px solid black;
 }
 
-.zero {
-    grid-row: 4 / 5;
+.eight, .five, .two, .zero {
     grid-column: 2 / 3;
-    border: 2px solid black;
+}
+
+.nine, .six, .three, .float {
+    grid-column: 3 / 4;
 }
 
 .float {
-    grid-row: 4 / 5;
-    grid-column: 3 / 4;
-    border: 2px solid black;
+    border: 1px solid #eeeeee;
+    padding-top: 1.2rem;
 }
 
-.one {
-    grid-row: 3 / 4;
-    grid-column: 1 / 2;
-    border: 2px solid black;
-}
-
-.two {
-    grid-row: 3 / 4;
-    grid-column: 2 / 3;
-    border: 2px solid black;
-}
-
-.three {
-    grid-row: 3 / 4;
-    grid-column: 3 / 4;
-    border: 2px solid black;
-}
-
-.four {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-    border: 2px solid black;
-}
-
-.five {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    border: 2px solid black;
-}
-
-.six {
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
-    border: 2px solid black;
-}
-
-.seven {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    border: 2px solid black;
-}
-
-.eight {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    border: 2px solid black;
-}
-
-.nine {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-    border: 2px solid black;
-}
-
-.plus {
-    grid-row: 4 / 5;
+.plus, .minus, .times, .divide {
     grid-column: 4 / 5;
-    border: 2px solid black;
+
 }
 
-.minus {
-    grid-row: 3 / 4;
-    grid-column: 4 / 5;
-    border: 2px solid black;
-}
-
-.times {
-    grid-row: 2 / 3;
-    grid-column: 4 / 5;
-    border: 2px solid black;
-}
-
-.divide {
-    grid-row: 1 / 2;
-    grid-column: 4 / 5;
-    border: 2px solid black;
+.delete, .equals {
+    grid-column: 5 / 6;
 }
 
 .delete {
     grid-row: 1 / span 2;
-    grid-column: 5 / 6;
-    border: 2px solid black;
+    border: 1px solid #eeeeee;
+    padding-top: 0.9rem;
+    font-size: 1.3rem;
 }
 
 .equals {
     grid-row: 3 / span 2;
-    grid-column: 5 / 6;
-    border: 2px solid black;
+    border: 1px solid #eeeeee;
+    padding-top: 5rem;
+    background-color: #6ae96a;
+}
+
+.equals:hover {
+    background-color: #2af62a;
+}
+
+.disHistory {
+    display: inline-block;
+    margin: 7.2% 2.8% 0 0;
+    width: fit-content;
+}
+
+.disText {
+    text-align: center;
+    margin: 1.6% 2.8% 0 auto;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.history {
+    height: 26%;
+}
+
+.seven, .eight, .nine, .divide, .delete {
+    border-top: none;
 }
