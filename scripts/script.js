@@ -145,11 +145,13 @@ equals.addEventListener("click", () => {
         // If the user clicked an operand at least once
         if (number1 !== null && number2 !== null) {
             // If number 1 and number 2 exist
-            if (operate(disOperand, number1, number2).toString().length >= 16) {
-                // Handle result overflow
-                display.textContent = "ERROR: RESULT TOO BIG";
+            if (operate(disOperand, number1, number2) % 1 !== 0) {
+                // If the result is a float, round it
                 disHistory.textContent = "";
-                error = true;
+                display.textContent = Math.round((operate(disOperand, number1, number2) + 0.00001) * 1000) / 1000;
+                number2 = null;
+                isFirst = true;
+                floatCheck = true;
             } else if (number1 == "0" && number2 == "0" && disOperand == "÷") {
                 // Handle 0 ÷ 0 division
                 display.textContent = "MATH ERROR"
@@ -160,13 +162,11 @@ equals.addEventListener("click", () => {
                     clear();
             } else if (display.textContent.slice(-1) == ".") {
                 // If the number ends with a float, do nothing
-            } else if (operate(disOperand, number1, number2) % 1 !== 0) {
-                // If the result is a float, round it
-                disHistory.textContent = "";
-                display.textContent = Math.round((operate(disOperand, number1, number2) + 0.00001) * 1000) / 1000;
-                number2 = null;
-                isFirst = true;
-                floatCheck = true;
+            } else if (operate(disOperand, number1, number2).toString().length >= 16) {
+                    // Handle result overflow
+                    display.textContent = "ERROR: RESULT TOO BIG";
+                    disHistory.textContent = "";
+                    error = true;
             } else {
                 // If everything is okay, do math, reset variables and history and show result
                 disHistory.textContent = "";
